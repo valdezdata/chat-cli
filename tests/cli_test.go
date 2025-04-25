@@ -14,6 +14,7 @@ func TestCreateChatClient(t *testing.T) {
 	os.Unsetenv("TOGETHER_API_KEY")
 	os.Unsetenv("GROQ_API_KEY")
 	os.Unsetenv("SAMBA_API_KEY")
+	os.Unsetenv("GEMINI_API_KEY") // Add this line for Gemini testing
 
 	// Create a logger for testing
 	logger := logging.New()
@@ -33,6 +34,12 @@ func TestCreateChatClient(t *testing.T) {
 		{
 			name:         "Groq without API key",
 			provider:     cli.ProviderGroq,
+			expectError:  true,
+			expectedType: "",
+		},
+		{
+			name:         "Gemini without API key",
+			provider:     cli.ProviderGemini,
 			expectError:  true,
 			expectedType: "",
 		},

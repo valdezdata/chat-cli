@@ -27,6 +27,7 @@ const (
 	ProviderGroq     Provider = "groq"
 	ProviderSamba    Provider = "samba"
 	ProviderOpenAI   Provider = "openai"
+	ProviderGemini   Provider = "gemini"
 )
 
 type ChatOptions struct {
@@ -87,7 +88,7 @@ func (p *ProviderFlag) String() string {
 
 func (p *ProviderFlag) Set(value string) error {
 	switch value {
-	case string(ProviderTogether), string(ProviderOllama), string(ProviderGroq), string(ProviderSamba), string(ProviderOpenAI):
+	case string(ProviderTogether), string(ProviderOllama), string(ProviderGroq), string(ProviderSamba), string(ProviderOpenAI), string(ProviderGemini):
 		*p = ProviderFlag(value)
 		return nil
 	default:
@@ -166,6 +167,15 @@ func CreateChatClient(provider Provider, logger *logging.Logger) (providers.Chat
 		} else {
 			logger.Error("OPENAI_API_KEY not set for OpenAI provider")
 			return nil, fmt.Errorf("OPENAI_API_KEY not set for OpenAI provider")
+		}
+	case ProviderGemini:
+		if os.Getenv("GEMINI_API_KEY") != "" {
+			logger.Debug("Initializing Gemini client")
+			client = &providers.GeminiClient{}
+			err = client.Initialize()
+		} else {
+			logger.Error("GEMINI_API_KEY not set for Gemini provider")
+			return nil, fmt.Errorf("GEMINI_API_KEY not set for Gemini provider")
 		}
 	case ProviderOllama:
 		logger.Debug("Initializing Ollama client")

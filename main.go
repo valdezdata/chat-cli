@@ -180,6 +180,8 @@ Environment Variables:
   SAMBA_MODEL       Model to use with SambaNova (options: llama-70b)
   OPENAI_API_KEY    API key for OpenAI
   OPENAI_MODEL      Model to use with OpenAI (options: gpt-4.1-nano)
+  GEMINI_API_KEY    API key for Google Gemini
+  GEMINI_MODEL      Model to use with Gemini (options: gemini-pro, gemini-flash, gemini-flash-lite)
 `
 
 func main() {

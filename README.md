@@ -80,6 +80,7 @@ chat-cli --provider together  # Uses Together AI
 chat-cli --provider groq      # Uses Groq
 chat-cli --provider samba     # Uses SambaNova
 chat-cli --provider openai    # Uses OpenAI
+chat-cli --provider gemini    # Uses Google Gemini
 ```
 
 ### Model Control Options
