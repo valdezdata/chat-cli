@@ -5,7 +5,7 @@ A terminal-based chat application for interacting with various LLM providers inc
 ## Features
 
 - Interactive chat with LLMs in your terminal
-- Support for multiple providers (Ollama, OpenAI, Together, Groq, SambaNova)
+- Support for multiple providers (Ollama, OpenAI, Together, Groq, SambaNova, Gemini)
 - Streaming responses with color-coded outputs
 - Shell mode for using the CLI in pipelines (similar to Simon Willison's LLM tool)
 - Prompt quality assessment
@@ -174,6 +174,8 @@ Different providers require different API keys and settings:
 - `SAMBA_MODEL` - Model to use with SambaNova (options: `llama-70b`)
 - `OPENAI_API_KEY` - API key for OpenAI
 - `OPENAI_MODEL` - Model to use with OpenAI (options: `gpt-4.1-nano`)
+- `GEMINI_API_KEY` - API key for Google Gemini
+- `GEMINI_MODEL` - Model to use with Gemini (options: `gemini-pro`, `gemini-flash`, `gemini-flash-lite`)
 
 ## Development
 

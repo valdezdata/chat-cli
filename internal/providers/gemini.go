@@ -19,7 +19,7 @@ import (
 
 // Supported Gemini models.
 var geminiModels = map[string]string{
-	"gemini-pro":        "gemini-2.5-pro-preview-03-25",
+	"gemini-pro":        "gemini-2.5-pro-exp-03-25",
 	"gemini-flash":      "gemini-2.5-flash-preview-04-17",
 	"gemini-flash-lite": "gemini-2.0-flash-lite",
 }
